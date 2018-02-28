@@ -4,7 +4,7 @@
   "description": "A solitair game with react",
   "main": "lib/index.js",
   "scripts": {
-    "build": "export NODE_ENV=production && webpack --config ./webpack/webpack.config.prod.js",
+    "build": "NODE_ENV=production webpack --bail --config ./webpack/webpack.config.prod.js --progress --colors -p",
     "test": "export NODE_PATH=$PWD/src; echo $NODE_PATH; mocha --compilers js:./src/tests/compiler.js ./src/tests/*.spec.js",
     "lint": "eslint src",
     "start": "node ./server.js",
@@ -29,6 +29,7 @@
     "babel-polyfill": "^6.5.0",
     "css-loader": "^0.22.0",
     "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.30.1",
     "node-sass": "^3.4.1",
     "postcss-modules-extract-imports": "^1.0.0",
     "postcss-modules-scope": "^1.0.0",
