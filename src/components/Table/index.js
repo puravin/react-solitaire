@@ -378,7 +378,7 @@ class Table extends Component {
     const CARD_HEIGHT = 323.551;
     const ASPECT = CARD_HEIGHT / CARD_WIDTH;
     let { width } = this.state;
-    let offsetWidth = Math.floor(width * 0.11);
+    let offsetWidth = Math.floor(width * 0.09);
     let offsetHeight = ASPECT * offsetWidth;
     return { offsetWidth, offsetHeight };
   }
@@ -391,12 +391,12 @@ class Table extends Component {
       );
     }
     // calculations
-    let tableWidth = this.state.width || 800;
+    // let tableWidth = this.state.width || 800;
     let { offsetWidth: droppableWidth, offsetHeight: droppableHeight } = this.getCardDimensions();
     // renderables
     let sevenDroppableStacks = this.createRow('STACK', 7, 0, CARD_Y_DISTANCE);
     let aceDroppableStacks = this.createRow('ACE', 4);
-    let dealAreaFaceDownCards = this.cardSlice('DEAL-AREA-FACEDOWN', tableWidth * 0.004);
+    let dealAreaFaceDownCards = this.cardSlice('DEAL-AREA-FACEDOWN');
     let dealAreaFaceUpCards = this.cardSlice('DEAL-AREA-FACEUP');
     let tableCards = this.cardSlice('TABLE');
 

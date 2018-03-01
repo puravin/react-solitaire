@@ -26,8 +26,8 @@ function mapStateToProps (state) {
   return {
     dragdrop: state.dragdrop,
     cards: state.cards.present,
-    canUndo: !state.cards.past.length,
-    canRedo: !state.cards.future.length
+    canUndo: false,
+    canRedo: false
   };
 }
 

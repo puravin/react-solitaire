@@ -2,9 +2,9 @@
 
 :local(.styles) {
   position: absolute;
-  width: 28.5%;
+  width: 25.5%;
   left: 8%;
-  top: 10%;
+  top: 10.5%;
   border: 2px solid white;
   padding: 0.5% 4% 0.5% 0.5%;
 
@@ -23,5 +23,12 @@
     display: inline-block;
     padding: 0;
     float: right;
+  }
+
+  span {
+    &.empty {
+      border: 3px solid #000;
+      border-radius: 3px;
+    }
   }
 }

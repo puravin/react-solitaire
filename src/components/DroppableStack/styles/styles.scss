@@ -2,10 +2,15 @@
 
 :local(.styles) {
   position: relative;
-  background: #00f;
+  background: transparent;
   border-radius: .375em;
   user-select: none;
   float: left;
 
   margin: 0 auto;
+
+  &.empty {
+    border: 3px solid #000;
+    border-radius: 3px;
+  }
 }

@@ -178,6 +178,21 @@ class DroppableStack extends Component {
     if (stackName.indexOf('STACK') >= 0) {
       offsetHeight += (numChildren > 2) ? (numChildren - 2) * 15 : 0;
     }
+
+    if (numChildren === 0) {
+      return (
+        <div
+          className={'droppable empty ' + styles}
+          style={ {
+            height: (offsetHeight - 6) + 'px',
+            width: (offsetWidth - 7) + 'px'
+          } }
+        >
+          {children}
+        </div>
+      );
+    }
+
     return (
       <div
         className={'droppable ' + styles}

@@ -18,25 +18,13 @@ const ButtonsPanel = ({handleRedoButtonClick,
                        canRedo,
                        handleDealButtonClick}) => (
   <div>
-    <GameButton className={'btn btn-sucess'}
-                float={'left'}
-                disabled={canRedo}
-                onClick={handleRedoButtonClick}>
-      {'Redo!'}
-    </GameButton>
-    <GameButton className={'btn btn-sucess'}
-                float={'left'}
-                disabled={canUndo}
-                onClick={handleUndoButtonClick}>
-      {'Undo!'}
-    </GameButton>
     {/* <GameButton className={'btn btn-sucess'}
                 float={'left'}
                 onClick={doWinAnimation}>
       {'Win!'}
     </GameButton> */}
-    <GameButton className={'btn btn-primary'}
-                float={'right'}
+    <GameButton className={'deal-btn'}
+                float={'left'}
                 onClick={handleDealButtonClick}>
       {'Deal!'}
     </GameButton>

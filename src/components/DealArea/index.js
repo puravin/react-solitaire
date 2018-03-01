@@ -104,19 +104,19 @@ class DealArea extends Component {
         switch (thisIndex) {
           case len - 2:
             return React.cloneElement(child, {
-              offsetLeft: offsetWidth * 0.15,
+              offsetLeft: (offsetWidth * 0.15) - 15,
               ...noopHandlers
             });
           case len - 1:
             return React.cloneElement(child, {
-              offsetLeft: offsetWidth * 0.30,
+              offsetLeft: (offsetWidth * 0.30) - 15,
               onDoubleClick: this.handleDoubleClick,
               onTouchTap: this.handleTouchTap
             });
 
           default:
             return React.cloneElement(child, {
-              offsetLeft: 0,
+              offsetLeft: -15,
               ...noopHandlers
             });
         }
@@ -149,8 +149,22 @@ class DealArea extends Component {
     let leftOffsetWidth = (faceDownHooked.length)
       ? offsetWidth + 'px'
       : '50%';
+
+    let faceUpHookClass = 'show';
+    let faceUpHookOffsetWidth = offsetWidth;
+    let faceUpHookOffsetHeight = offsetHeight;
+    let faceUpHookMarginRight = '0';
+
+    if (!faceUpHooked.length) {
+      faceUpHookClass = 'empty';
+      faceUpHookOffsetWidth -= 7;
+      faceUpHookOffsetHeight -= 6;
+      faceUpHookMarginRight = '15px';
+    }
+
     return (
       <div
+        id={'dealArea'}
         className={styles}
         style={ {
           height: (1.02 * offsetHeight) + 'px'
@@ -167,9 +181,11 @@ class DealArea extends Component {
         </span>
         <span
           id={'right'}
+          className={faceUpHookClass}
           style={ {
-            width: offsetWidth + 'px',
-            height: offsetHeight + 'px'
+            marginRight: faceUpHookMarginRight,
+            width: faceUpHookOffsetWidth + 'px',
+            height: faceUpHookOffsetHeight + 'px'
           } }
         >
           {faceUpHooked}
