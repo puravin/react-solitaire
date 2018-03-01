@@ -4,7 +4,7 @@
   "description": "A solitair game with react",
   "main": "lib/index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack --bail --config ./webpack/webpack.config.prod.js --progress --colors -p",
+    "build": "SET \"NODE_ENV=production\" && webpack --bail --config ./webpack/webpack.config.prod.js --progress --colors -p",
     "test": "export NODE_PATH=$PWD/src; echo $NODE_PATH; mocha --compilers js:./src/tests/compiler.js ./src/tests/*.spec.js",
     "lint": "eslint src",
     "start": "node ./server.js",
