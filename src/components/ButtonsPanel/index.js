@@ -23,11 +23,8 @@ const ButtonsPanel = ({handleRedoButtonClick,
                 onClick={doWinAnimation}>
       {'Win!'}
     </GameButton> */}
-    <GameButton className={'deal-btn'}
-                float={'left'}
-                onClick={handleDealButtonClick}>
-      {'Deal!'}
-    </GameButton>
+   
+      
   </div>
 );
 
