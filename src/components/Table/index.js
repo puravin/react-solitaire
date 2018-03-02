@@ -21,7 +21,7 @@ import ButtonsPanel from '../../components/ButtonsPanel/';
 import LoadSpinner from '../../components/LoadSpinner/';
 
 const DISPLAY_NAME = '<Table>';
-const CARD_Y_DISTANCE = 15;
+const CARD_Y_DISTANCE = 8;
 const propTypes = {
   // Two slices of state from redux
   dragdrop: PropTypes.object.isRequired,

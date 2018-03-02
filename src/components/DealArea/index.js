@@ -162,6 +162,18 @@ class DealArea extends Component {
       faceUpHookMarginRight = '15px';
     }
 
+    let faceDownHookClass = 'show';
+    let faceDownHookOffsetWidth = leftOffsetWidth;
+    let faceDownHookOffsetHeight = offsetHeight;
+    let faceDownHookMarginRight = '0';
+
+    if (!faceDownHooked.length) {
+      faceDownHookClass = 'empty';
+      faceDownHookOffsetWidth = offsetWidth - 7;
+      faceDownHookOffsetHeight -= 6;
+      faceDownHookMarginRight = '15px';
+    }
+      
     return (
       <div
         id={'dealArea'}
@@ -172,9 +184,10 @@ class DealArea extends Component {
       >
         <span
           id={'left'}
+          className={faceDownHookClass}
           style={ {
-            width: leftOffsetWidth,
-            height: offsetHeight + 'px'
+            width: faceDownHookOffsetWidth,
+            height: faceDownHookOffsetHeight + 'px'
           } }
         >
           {faceDownHooked}
